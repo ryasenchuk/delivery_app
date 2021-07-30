@@ -17,6 +17,19 @@
         <td><%= link_to 'Show', courier %></td>
         <td><%= link_to 'Edit', edit_courier_path(courier) %></td>
         <td><%= link_to 'Destroy', courier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= form_for courier.packages.build do |f| %>
+          <%= f.hidden_field :courier_id, value: courier.id %>
+          <%= f.label :track_number %>
+          <%= f.text_field :tracking_number %>
+            <div class="field">
+              <%= f.label "Delivery status" %>
+              <%= f.radio_button(:delivery_status, true) %>
+              <%= f.label "Yes" %>
+              <%= f.radio_button(:delivery_status, false) %>
+              <%= f.label "No" %>
+            </div>
+          <%= f.submit "Create package" %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
