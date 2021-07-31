@@ -1,12 +1,12 @@
 class CouriersController < ApplicationController
   before_action :set_courier, only: %i[ show edit update destroy ]
 
-  # GET /couriers or /couriers.json
+  # GET /couriers
   def index
     @couriers = Courier.all
   end
 
-  # GET /couriers/1 or /couriers/1.json
+  # GET /couriers/1
   def show
   end
 
@@ -19,7 +19,7 @@ class CouriersController < ApplicationController
   def edit
   end
 
-  # POST /couriers or /couriers.json
+  # POST /couriers
   def create
     @courier = Courier.new(courier_params)
 
@@ -34,7 +34,7 @@ class CouriersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /couriers/1 or /couriers/1.json
+  # PATCH/PUT /couriers/1
   def update
     respond_to do |format|
       if @courier.update(courier_params)
@@ -47,7 +47,7 @@ class CouriersController < ApplicationController
     end
   end
 
-  # DELETE /couriers/1 or /couriers/1.json
+  # DELETE /couriers/1
   def destroy
     @courier.destroy
     respond_to do |format|

@@ -1,12 +1,12 @@
 class PackagesController < ApplicationController
   before_action :set_package, only: %i[ show edit update destroy ]
 
-  # GET /packages or /packages.json
+  # GET /packages
   def index
     @packages = Package.all
   end
 
-  # GET /packages/1 or /packages/1.json
+  # GET /packages/1
   def show
   end
 
@@ -19,7 +19,7 @@ class PackagesController < ApplicationController
   def edit
   end
 
-  # POST /packages or /packages.json
+  # POST /packages
   def create
     @package = Package.new(package_params)
 
@@ -34,7 +34,7 @@ class PackagesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /packages/1 or /packages/1.json
+  # PATCH/PUT /packages/1
   def update
     respond_to do |format|
       if @package.update(package_params)
@@ -47,7 +47,7 @@ class PackagesController < ApplicationController
     end
   end
 
-  # DELETE /packages/1 or /packages/1.json
+  # DELETE /packages/1
   def destroy
     @package.destroy
     respond_to do |format|
